@@ -1,0 +1,63 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.util.ArrayList;
+
+public class RegistroAlumnos extends JFrame {
+    // Declaraciones de componentes de la interfaz de usuario
+    private JLabel lblNombre, lblApellido, lblIdentificacion, lblFechaNacimiento, lblDireccion;
+    private JTextField txtNombre, txtApellido, txtIdentificacion, txtFechaNacimiento, txtDireccion;
+    private JButton btnAgregar, btnGuardar, btnEliminar, btnBuscar;
+    private JList<String> listaAlumnos;
+    private DefaultListModel<String> modeloLista;
+
+    // Lista de estudiantes
+    private ArrayList<Estudiante> estudiantes;
+
+    public RegistroAlumnos() {
+        // Configuración de la ventana
+        setTitle("Registro de Alumnos");
+        setSize(600, 400);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        // Inicialización de la lista de estudiantes y el modelo de lista
+        estudiantes = new ArrayList<>();
+        modeloLista = new DefaultListModel<>();
+        listaAlumnos = new JList<>(modeloLista);
+
+        // Configuración de la interfaz de usuario (agregar componentes, eventos, etc.)
+
+        // ...
+
+        // Agregar funcionalidades (agregar, guardar, eliminar, buscar, ordenar, filtrar)
+
+        // ...
+
+        // Inicialización y visualización de la ventana
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            new RegistroAlumnos();
+        });
+    }
+}
+
+class Estudiante {
+    private String nombre;
+    private String apellido;
+    private String identificacion;
+    private String fechaNacimiento;
+    private String direccion;
+
+    // Constructor, getters y setters
+
+    // ...
+
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + " Apellido: " + apellido + " Identificación: " + identificacion;
+    }
+}
